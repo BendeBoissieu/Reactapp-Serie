@@ -1,15 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import List from './components/list';
 import './App.css';
 
-class List extends Component {
-  render() {
-    return (
-      <div className="liste">Ici c'est ma liste</div>
-      )
 
-  }
-}
 
 class App extends Component {
   render() {
