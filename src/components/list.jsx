@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class List extends Component {
   render() {
     return (
-      <div className="liste">Ici c'est ma liste</div>
+      <div className="liste">{this.props.todos.length}</div>
       )
 
   }
