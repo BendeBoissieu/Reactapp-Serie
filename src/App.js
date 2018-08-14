@@ -21,6 +21,15 @@ class App extends Component {
     this.setState({ todos: newTodoList})
 
   }
+  toggleTodoState(todo, index){
+    let _todo = todo;
+    _todo.done = !todo.done;
+    let newTodos = this.state.todos;
+    newTodos[index] = _todo;
+    this.setState({ todos: newTodos });
+
+
+  }
   render() {
     return (
       <div className="App">
@@ -28,10 +37,11 @@ class App extends Component {
           <h1 className="App-title">To do App</h1>
         </header>
         <p className="App-intro">
-          By Benjamin de Boissieu
+          By Benjamin de Boissieu </p>
           <TodoForm onNewTodo={this.onNewTodo.bind(this)}/>
-          <List todos={this.state.todos}/>
-        </p>
+          <List todos={this.state.todos}
+                onTodoToggle={this.toggleTodoState.bind(this)}/>
+
 
       </div>
     );

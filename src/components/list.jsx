@@ -9,11 +9,19 @@ class List extends Component {
       )
 
   }
+  toggleTodo(todo, index){
+    this.props.onTodoToggle(todo, index);
+  }
+
   showTodos(todos){
     return (
-      todos.map((todo) => {
+      todos.map((todo, idx) => {
         return (
-          <div className="todo">{todo.title}</div>
+          <div className="todo"
+          key="todo-{todo.title}"
+          onClick={() => this.toggleTodo(todo, idx)}>
+          {todo.title} Done? {todo.done ? 'yes' : 'non'}
+          </div>
           )
       })
       )
